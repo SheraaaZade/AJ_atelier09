@@ -11,9 +11,10 @@ public class ProxyServer {
         String url;
         while(true){
             url = scanner.nextLine();
-            QueryHandler queryhandler = new QueryHandler();
-            queryhandler.start();
             Query query = new Query(url, Query.QueryMethod.GET);
+            QueryHandler queryhandler = new QueryHandler(query);
+            queryhandler.start();
+
         }
     }
 }
